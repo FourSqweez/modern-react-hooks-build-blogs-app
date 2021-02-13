@@ -1,13 +1,147 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/** base styles */
+* {
+  background-color: #212b38;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Quicksand';
+  color: rgb(248, 246, 246);
+  text-decoration: none;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f8f8f2;
+}
+.navbar h1 {
+  color: #caffb5;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  color: #f8b1c8;
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #caffb5;
+}
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/** blog previews / list */
+.blog-preview {
+  display:flex;
+  padding: 10px 16px;
+  margin: 20px 0;
+}
+.blog-preview:hover {
+  box-shadow: 3px 5px 15px rgba(255, 255, 255, 0.1);
+  border-right: 1px solid #ffffa5;
+}
+.blog-preview h2 {
+  font-size: 20px;
+  color: #f692b2;
+  margin-bottom: 8px;
+}
+
+.blog-preview a {
+width: 100%;
+  text-decoration: none;
+}
+.blog-preview button {
+  margin-left: auto;
+  background: #f54a7d;
+  color: #c5e1fd;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
+  height:min-content ;
+  width: 10%;
+
+  
+}
+
+.blog-preview p {
+  color: antiquewhite;
+}
+
+.blog-list > h2:first-child {
+  color: #9dcaf8;
+}
+
+/** blog details page */
+.blog-details h2 {
+  font-size: 20px;
+  color: #f692b2;
+  margin-bottom: 10px;
+}
+
+.blog-details article {
+  color: #ffd580;
+}
+.blog-details div {
+  margin: 20px 0;
+  color: #f8f8f2;
+}
+
+.blog-details button {
+  background: #f54a7d;
+  color: #c5e1fd;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+/** create new blog form */
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 20px;
+  color: #f692b2;
+  margin-bottom: 30px;
+}
+.create textarea,
+input,
+select,
+option {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #c5e1fd;
+  box-sizing: border-box;
+  display: block;
+  color: #f8b1c8;
+}
+.create button {
+  background: #f54a7d;
+  color: #c5e1fd;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.create label {
+  color: #ffffa5;
 }
