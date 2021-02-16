@@ -1,5 +1,6 @@
 import BlogList from './BlogList'
 import useFetch from './useFetch'
+import {Helmet} from 'react-helmet'
 
 const Home = () => {
   const { data: blogs, isPending, error } = useFetch(
@@ -7,11 +8,15 @@ const Home = () => {
   )
 
   return (
+    <>
+    <Helmet>
+      <title>Home</title>
+    </Helmet>
     <div className="home">
       {error && <p>{error}</p>}
       {isPending && <div>Loading...</div>}
       {blogs && <BlogList blogs={blogs} title="All Blogs!" />}
-    </div>
+    </div></>
   )
 }
 

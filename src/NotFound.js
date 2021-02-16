@@ -1,6 +1,15 @@
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const NotFound = () => {
+  const history = useHistory()
+
+  useEffect(() => {
+    setTimeout(() => {
+      history.push('/')
+    }, 3000)
+  }, [])
+
   return (
     <div className="not-found">
       <h2>Sorry</h2>

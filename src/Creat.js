@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const Creat = () => {
   const [title, setTitle] = useState('')
@@ -24,38 +25,43 @@ const Creat = () => {
   }
 
   return (
-    <div className="create">
-      <h2>Create New Blogs</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Blog title:</label>
-        <input
-          type="text"
-          required
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label>Blog body:</label>
-        <textarea
-          required
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        ></textarea>
-        <label> Blog author:</label>
-        <select
-          required
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        >
-          <option value="mario">mario</option>
-          <option value="yoshi">yoshi</option>
-        </select>
-        {!isPending && <button>Add Blog</button>}
-        {isPending && <button>Adding Blog...</button>}
-      </form>
-      <p>{title}</p>
-      <p>{body}</p>
-      <p>{author}</p>
-    </div>
+    <>
+      <Helmet>
+        <title>Create blog</title>
+      </Helmet>
+      <div className="create">
+        <h2>Create New Blogs</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Blog title:</label>
+          <input
+            type="text"
+            required
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <label>Blog body:</label>
+          <textarea
+            required
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
+          ></textarea>
+          <label> Blog author:</label>
+          <select
+            required
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          >
+            <option value="mario">mario</option>
+            <option value="yoshi">yoshi</option>
+          </select>
+          {!isPending && <button>Add Blog</button>}
+          {isPending && <button>Adding Blog...</button>}
+        </form>
+        <p>{title}</p>
+        <p>{body}</p>
+        <p>{author}</p>
+      </div>
+    </>
   )
 }
 
